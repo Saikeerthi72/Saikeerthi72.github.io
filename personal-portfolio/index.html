@@ -1,0 +1,906 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="portfolioApp">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!--Bootstrap-->
+
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
+  <!--Angular-->
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+
+  <!--Graphic API-->
+
+ <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+
+  <title>Personal Portfolio</title>
+
+  <!--
+    - favicon
+  -->
+  <link rel="shortcut icon" href="./assets/images/logo.ico" type="image/x-icon">
+
+  <!--
+    - custom css link
+  -->
+  <link rel="stylesheet" href="./assets/css/style.css">
+
+  <!--
+    - font
+  -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+ 
+
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+</head>
+
+<body>
+
+  <!--
+    - #MAIN
+  -->
+  <div class="container-fluid">
+  <main>
+
+    <!--
+      - #SIDEBAR
+    -->
+
+    <aside class="sidebar" data-sidebar>
+
+    
+
+      <div class="sidebar-info">
+
+        <figure class="avatar-box">
+          <img src="./assets/images/headshot1.jpg" alt="Sai Keerthi Vadnala" width="80">
+        </figure>
+
+        <div class="info-content">
+          <h1 class="name" title="Sai Keerthi Vadnala">Sai Keerthi Vadnala</h1>
+
+          <p class="title">Data science enthusiast</p>
+        </div>
+
+        <button class="info_more-btn" data-sidebar-btn>
+          <span>Show Contacts</span>
+
+          <ion-icon name="chevron-down"></ion-icon>
+        </button>
+
+      </div>
+
+      <div class="sidebar-info_more">
+
+        <div class="separator"></div>
+
+        <ul class="contacts-list">
+
+          <li class="contact-item">
+
+            <div class="icon-box">
+              <ion-icon name="mail-outline"></ion-icon>
+            </div>
+
+            <div class="contact-info">
+              <p class="contact-title">Email</p>
+
+              <a href="mailto:vadnalsi@mail.uc.edu" class="contact-link">vadnalsi@mail.uc.edu</a>
+            </div>
+
+          </li>
+
+        
+
+          <li class="contact-item">
+
+            <div class="icon-box">
+              <ion-icon name="calendar-outline"></ion-icon>
+            </div>
+
+            <div class="contact-info">
+              <p class="contact-title">Birthday</p>
+
+              <time datetime="2000-07-27">July 27, 2000</time>
+            </div>
+
+          </li>
+
+          <li class="contact-item">
+
+            <div class="icon-box">
+              <ion-icon name="location-outline"></ion-icon>
+            </div>
+
+            <div class="contact-info">
+              <p class="contact-title">Location</p>
+
+              <address>3250 Whitfield Ave, Cincinnati, OH, USA</address>
+            </div>
+
+          </li>
+
+        </ul>
+
+        <div class="separator"></div>
+
+
+        <ul class="social-list">
+
+
+        <li class="social-item">
+            <a href="Sai_keerthi_Resume.pdf" style="text-align: center;" class="social-link" >Resume</a>
+          </li>
+
+
+          <li class="social-item">
+            <a href="#" class="social-link">
+              <ion-icon name="logo-linkedin"></ion-icon>
+            </a>
+          </li>
+
+
+          <li class="social-item">
+            <a href="https://github.com/Saikeerthi72" class="social-link">
+              <ion-icon name="logo-github"></ion-icon>
+
+            </a>
+          </li>
+
+           <li class="social-item">
+            <a href=" waph.html" class="social-link">waph-course</a>
+          </li>
+
+        </ul>
+
+      </div>
+
+    </aside>
+
+
+
+
+
+    <!--
+      - #main-content
+    -->
+
+    <div class="main-content">
+
+      <!--
+        - #NAVBAR
+      -->
+
+      <nav class="navbar">
+
+        <ul class="navbar-list">
+
+          <li class="navbar-item">
+            <button class="navbar-link  active" data-nav-link>About</button>
+          </li>
+
+          <li class="navbar-item">
+            <button class="navbar-link" data-nav-link>Resume</button>
+          </li>
+
+          <li class="navbar-item">
+            <button class="navbar-link" data-nav-link>Projects</button>
+          </li>
+
+          <li class="navbar-item">
+            <button class="navbar-link" data-nav-link>Blog</button>
+          </li>
+
+          <li class="navbar-item">
+            <button class="navbar-link" data-nav-link>Contact</button>
+          </li>
+
+        </ul>
+
+      </nav>
+
+
+
+
+
+      <!--
+        - #ABOUT
+      -->
+
+      <article class="about  active" data-page="about">
+
+        <header>
+          <h2 class="h2 article-title">About me</h2>
+        </header>
+
+        <section class="about-text">
+        
+          <p>My name is Sai Keerthi Vadnala, and I am a Master's student with a passion for data science. I have a strong foundation in python, data analysis and also front-end web development and have actively engaged in several web development projects.My journey in the world of technology has led me to explore various aspects of web development, where I have honed my skills in HTML, CSS, and JavaScript, BOotstrap, Angular. Through hands-on projects, I have gained practical experience in building responsive and user-friendly websites that not only met but exceed client expectations. With each project, I strive to push the boundaries of my knowledge and creativity, always seeking new challenges and opportunities for growth. </p>
+        
+        </section>
+
+
+        <!--
+          - service
+        -->
+
+        <section class="service">
+
+          <h3 class="h3 service-title">What I'm Interested</h3>
+
+          <ul class="service-list">
+
+            <li class="service-item">
+
+              <div class="service-icon-box">
+                <img src="./assets/images/icon-design.svg
+                " alt="design icon" width="40">
+              </div>
+
+              <div class="service-content-box">
+                <h4 class="h4 service-item-title">Data analysis</h4>
+
+                <p class="service-item-text">
+                  Uncovering insights from data to drive informed decisions.
+              </div>
+
+            </li>
+
+            <li class="service-item">
+
+              <div class="service-icon-box">
+                <img src="./assets/images/icon-dev.svg" alt="Web development icon" width="40">
+              </div>
+
+              <div class="service-content-box">
+                <h4 class="h4 service-item-title">Web development</h4>
+
+                <p class="service-item-text">
+                  Developing interactive and dynamic web experiences with code.
+                </p>
+              </div>
+
+            </li>
+
+            <li class="service-item">
+
+              <div class="service-icon-box">
+                <img src="./assets/images/icon-app.svg" alt="mobile app icon" width="40">
+              </div>
+
+              <div class="service-content-box">
+                <h4 class="h4 service-item-title">Graphic Designing</h4>
+
+                <p class="service-item-text">
+                  Bringing ideas to life through visually captivating designs.
+                </p>
+              </div>
+
+            </li>
+
+            
+
+          </ul>
+
+        </section>
+
+ </article>
+
+
+        <!--
+          -modal
+        -->
+
+        <div class="modal-container" data-modal-container>
+
+          <div class="overlay" data-overlay></div>
+
+          <section class="testimonials-modal">
+
+            <button class="modal-close-btn" data-modal-close-btn>
+              <ion-icon name="close-outline"></ion-icon>
+            </button>
+
+            <div class="modal-img-wrapper">
+              <figure class="modal-avatar-box">
+                <img src="./assets/images/avatar-1.png" width="80" data-modal-img>
+              </figure>
+
+              <img src="./assets/images/icon-quote.svg" alt="quote icon">
+            </div>
+
+            <div class="modal-content">
+
+             
+              <div data-modal-text>
+                <p>
+               DIEDUQWERTYUBCDUCIIIIUEDEW
+               NIUDHIUEWDHEOWIHDFEIOWFJ
+                </p>
+              </div>
+
+            </div>
+
+          </section>
+
+        </div>
+
+
+      <!--
+      RESUME
+      -->
+
+      <article class="resume" data-page="resume">
+
+        <header>
+          <h2 class="h2 article-title">Resume</h2>
+        </header>
+
+        <section class="timeline">
+
+          <div class="title-wrapper">
+            <div class="icon-box">
+              <ion-icon name="book-outline"></ion-icon>
+            </div>
+
+            <h3 class="h3">Education</h3>
+          </div>
+
+          <ol class="timeline-list">
+
+            <li class="timeline-item">
+
+              <h4 class="h4 timeline-item-title">University of Cincinnati, USA</h4>
+
+              <span>2023 — present</span>
+
+              <p class="timeline-text">
+                I'm a masters student at UC specialized in Information Technology. 
+              </p>
+
+            </li>
+
+            <li class="timeline-item">
+
+              <h4 class="h4 timeline-item-title">VNR VJIET, India</h4>
+
+              <span>2017 — 2021</span>
+
+              <p class="timeline-text">
+                I have completed my Bachelors of Technology in Computer Science.
+              </p>
+
+            </li>
+
+            <li class="timeline-item">
+
+              <h4 class="h4 timeline-item-title">Krishnaveni High School, India</h4>
+
+              <span>2010 — 2015</span>
+
+              <p class="timeline-text">
+                I have completed my schooling from KHS.
+              </p>
+
+            </li>
+
+          </ol>
+
+        </section>
+
+        <section class="timeline">
+
+          <div class="title-wrapper">
+            <div class="icon-box">
+              <ion-icon name="book-outline"></ion-icon>
+            </div>
+
+            <h3 class="h3">Experience</h3>
+          </div>
+
+          <ol class="timeline-list">
+
+            <li class="timeline-item">
+
+              <h4 class="h4 timeline-item-title">Graduate Teaching Assistant</h4>
+
+              <span>2023 — Present</span>
+
+              <p class="timeline-text">
+                I have worked as a TA for DBMS and currently assisting for Advanced Storage technologies.
+              </p>
+
+            </li>
+
+            <li class="timeline-item">
+
+              <h4 class="h4 timeline-item-title">Analyst - Accenture solutions, India.</h4>
+
+              <span>2021 — 2023</span>
+
+              <p class="timeline-text">
+           
+              </p>
+
+            </li>
+
+            <li class="timeline-item">
+
+              <h4 class="h4 timeline-item-title">Application Development associate - Cognizant, India./h4>
+
+              <span>2021 — 2022</span>
+
+              <p class="timeline-text">
+                I have interned at Cognizant, got trained on full stack development and built a pension management portal.
+              </p>
+
+            </li>
+
+            <li class="timeline-item">
+
+              <h4 class="h4 timeline-item-title">Graphic Designer</h4>
+
+              <span>2019 — 2021</span>
+
+              <p class="timeline-text">
+                I have worked as a graphic designer for 2 years and got expertise in using Adobe tools.
+              </p>
+
+            </li>
+
+          </ol>
+
+        </section>
+
+        <section class="skill">
+
+          <h3 class="h3 skills-title">My skills</h3>
+
+          <ul class="skills-list content-card">
+
+            <li class="skills-item">
+
+            <li class="skills-item">
+
+              <div class="title-wrapper">
+                <h5 class="h5">Data Analysis</h5>
+                <data value="70">70%</data>
+              </div>
+
+              <div class="skill-progress-bg">
+                <div class="skill-progress-fill" style="width: 70%;"></div>
+              </div>
+
+            </li>
+            <li class="skills-item">
+
+              <div class="title-wrapper">
+                <h5 class="h5">Data Visualization</h5>
+                <data value="90">90%</data>
+              </div>
+
+              <div class="skill-progress-bg">
+                <div class="skill-progress-fill" style="width: 90%;"></div>
+              </div>
+
+            </li>
+              <li class="skills-item">
+            
+              <div class="title-wrapper">
+                <h5 class="h5">Web development</h5>
+                <data value="70">70%</data>
+              </div>
+
+              <div class="skill-progress-bg">
+                <div class="skill-progress-fill" style="width: 70%;"></div>
+              </div>
+
+            </li>
+
+            <li class="skills-item">
+
+              <div class="title-wrapper">
+                <h5 class="h5">DBMS</h5>
+                <data value="80">80%</data>
+              </div>
+
+              <div class="skill-progress-bg">
+                <div class="skill-progress-fill" style="width: 80%;"></div>
+              </div>
+
+            </li>
+
+          </ul>
+
+        </section>
+
+      </article>
+
+
+
+
+
+      <!--
+        - #PROJECTS
+      -->
+
+      <article class="projects" data-page="projects">
+
+        <header>
+          <h2 class="h2 article-title">Projects</h2>
+        </header>
+
+        <section class="projects">
+
+       
+
+          <div class="filter-select-box">
+
+            <button class="filter-select" data-select>
+
+              <div class="select-value" data-selecct-value>Select category</div>
+
+              <div class="select-icon">
+                <ion-icon name="chevron-down"></ion-icon>
+              </div>
+
+            </button>
+
+        
+
+          </div>
+
+
+        
+          <ul class="project-list">
+
+
+            <li class="project-item  active" data-filter-item data-category="web development">
+              <a href="#">
+
+                <figure class="project-img">
+                  <div class="project-item-icon-box">
+                    <ion-icon name="eye-outline"></ion-icon>
+                  </div>
+
+                  <img src="./assets/images/webdev1.jpeg" alt="InsightGen" loading="lazy">
+                </figure>
+
+                <h3 class="project-title">InsightGen Project</h3>
+
+                <i class="project-category">Web development</i>
+                 <p class="project-category">Worked on integrating Angular for the frontend and utilized database management techniques to enhance data processing and retrieval capabilities. Developed optimized code using MySQL for efficient data storage and retrieval in InsightGen project.</p>
+
+              </a>
+            </li>
+
+          
+
+            <li class="project-item  active" data-filter-item data-category="applications">
+              <a href="#">
+
+                <figure class="project-img">
+                  <div class="project-item-icon-box">
+                    <ion-icon name="eye-outline"></ion-icon>
+                  </div>
+
+                  <img src="./assets/images/ecomm.jpeg" alt="ShopEase" loading="lazy">
+                </figure>
+
+                <h3 class="project-title">ShopEase Project</h3>
+
+                <i class="project-category">Web development</i>
+                <p class="project-category">Designed and developed ShopEase e-commerce website, focusing on front-end development using HTML, CSS, JavaScript, Bootstrap, and Angular frameworks. Implemented robust database management with MySQL, mongodb to ensure seamless data handling and storage for enhanced functionality.</p>
+
+              </a>
+            </li>
+
+            <li class="project-item  active" data-filter-item data-category="web design">
+              <a href="#">
+
+                <figure class="project-img">
+                  <div class="project-item-icon-box">
+                    <ion-icon name="eye-outline"></ion-icon>
+                  </div>
+
+                  <img src="./assets/images/blockchain.jpeg" alt="Pharmachain." loading="lazy">
+                </figure>
+
+                <h3 class="project-title">Counterfeit of medicines in pharma chain</h3>
+
+                <i class="project-category">Blockchain</i>
+                <p class="project-category">Developed a proof of concept containing a supply chain network, which includes all stakeholders (manufacturers, distributors and retailers).Tracing the status of medicine, at any given point of time and the records are immutable.</p>
+
+              </a>
+            </li>
+
+       
+
+          </ul>
+
+        </section>
+
+      </article>
+
+
+
+
+
+      <!--
+        - #BLOG
+      -->
+
+      <article class="blog active" data-page="blog">
+
+        <header>
+          <h2 class="h2 article-title">Task</h2>
+        </header>
+
+        <section class="blog-posts">
+
+                <div class="blog-content">
+
+                  <!--Show date-->
+                <div id="date" style="color: whitesmoke;" onclick="document.getElementById('date').innerHTML= Date()">Click to show the date()</div>
+
+                  <!-Analog clock->
+                 <canvas id="analog-clock" width="150" height="150" style="background-color:#999"></canvas>
+                 <script src="https://waph-uc.github.io/clock.js"></script>
+            
+
+                   <!-Digital clock->
+                 <div id="digital-clock" style="color: whitesmoke;"></div>
+                  <script>
+                  function displayTime(){
+                    document.getElementById('digital-clock').innerHTML="Current time: " + new Date(); }
+                  setInterval(displayTime,500);
+             
+                  </script>
+
+                  <!-Flag counter->
+                 <div>
+                 <a href="https://info.flagcounter.com/iUmo"><img src="https://s01.flagcounter.com/count2/iUmo/bg_FFFFFF/txt_000000/border_CCCCCC/columns_2/maxflags_10/viewers_0/labels_1/pageviews_1/flags_0/percent_0/" alt="Flag Counter" border="0"></a>
+                </div>
+
+
+                  <!-Show/hide email->
+                <div id="email" style="color: whitesmoke;" onclick="showhideEmail()">Show my email</div>
+                <div id="response" style="color:whitesmoke;"></div>
+                <script>
+                var shown=false;
+                function showhideEmail()
+                {
+                if(shown)
+                {
+                document.getElementById('email').innerHTML="Show my email";
+                shown=false;
+                }
+                else
+                {
+                var myemail = "<a href='mailto:vadnalsi"+ "@" + "mail.uc.edu'> vadnalsi"+ "@" + "mail.uc.edu</a>";
+                document.getElementById('email').innerHTML=myemail;
+                shown=true;
+                }
+                }
+              </script>
+              
+<script>      
+
+      var canvas = document.getElementById("analog-clock");
+      var ctx = canvas.getContext("2d");
+      var radius = canvas.height / 2;
+      ctx.translate(radius,radius);
+      radius = radius *0.90
+      setInterval(drawClock,1000);
+
+      function drawClock() {
+        drawFace(ctx,radius);
+        drawNumbers(ctx,radius);
+        drawTime(ctx,radius); 
+      }
+
+      $.get("https://v2.jokeapi.dev/joke/Programming?type=single",
+        function(result){
+          console.log("From jokeAPI: " + JSON.stringify(result));
+          $("#response").html("A programming joke of the day: " + result.joke);
+        }
+      );
+
+</script>
+</div>
+
+
+ <script>
+    
+    function setCookie(name, value, days) {
+      var expires = "";
+      if (days) {
+        var date = new Date();
+        date.setTime(date.getTime() + (days * 24 * 60 * 60 * 1000));
+        expires = "; expires=" + date.toUTCString();
+      }
+      document.cookie = name + "=" + (value || "") + expires + "; path=/";
+    }
+
+   
+    function getCookie(name) {
+      var nameEQ = name + "=";
+      var ca = document.cookie.split(';');
+      for(var i = 0; i < ca.length; i++) {
+        var c = ca[i];
+        while (c.charAt(0) == ' ') {
+          c = c.substring(1, c.length);
+        }
+        if (c.indexOf(nameEQ) == 0) {
+          return c.substring(nameEQ.length, c.length);
+        }
+      }
+      return null;
+    }
+
+   
+    function displayWelcomeMessage() {
+      var lastVisit = getCookie("lastVisit");
+      if (lastVisit) {
+        
+        alert("Welcome back! Your last visit was " + lastVisit);
+      } else {
+       
+        var currentDate = new Date();
+        setCookie("lastVisit", currentDate, 30); 
+        alert("Welcome to my homepage!");
+      }
+    }
+
+   
+    displayWelcomeMessage();
+  </script>
+
+
+
+   <div ng-controller="CertificationController" style="color:whitesmoke;" >
+        <h1>My Certifications</h1>
+        <div class="certification" ng-repeat="certification in certifications">
+            <h2>{{certification.name}}</h2>
+            <p>{{certification.description}}</p>
+            <p>Issued by: {{certification.issuer}}</p>
+            <p>Issued on: {{certification.date}}</p>
+        </div>
+    </div>
+
+    <script>
+        
+        var app = angular.module('portfolioApp', []);
+
+        app.controller('CertificationController', function($scope) {
+     
+            $scope.certifications = [
+                {
+                       name: 'Microsoft AZ-900 Certification',
+                    description:'Certified in Microsoft Azure AZ-900 certification which validates foundational knowledge of cloud services and Azures core offerings.',
+                    issuer: 'Microsoft',
+                    date: 'March 2023'
+                },
+                {
+                    name: 'JavaScript Certification',
+                    description: 'Certified as a JavaScript specialist by demonstrating proficiency in JavaScript programming language through a series of assessments.',
+                    issuer: 'Udemy',
+                    date: 'December 2022'
+                },
+                {
+                    name: 'Python Certification',
+                    description: 'Certified in Advanced Python programming after completing an online training program and passing the certification exam.',
+                    issuer: 'Codecademy',
+                    date: 'June 2023'
+                }
+                
+            ];
+        });
+    </script>
+
+ <div id="myDiv"></div>
+
+    <script>
+        
+        var xValues = ['HTML','CSS','Bootstrap','JS','Java','Python'];
+
+        var yValues = [7,8,8,9,9,10];
+        
+
+        var graph = {
+            x: xValues,
+            y: yValues,
+            type: 'scatter',
+            mode: 'lines+markers',
+            marker: {color: 'red'}
+        };
+
+        
+        var layout = {
+            title: 'My Skills - Graphical Web API',
+            xaxis: {
+                title: 'Skills'
+            },
+            yaxis: {
+                title: 'Rating scale'
+            }
+        };
+
+        
+        Plotly.newPlot('myDiv', [graph], layout);
+    </script>
+
+        </section>
+
+      </article>
+
+
+
+
+
+      <!--
+      CONTACT
+      -->
+
+      <article class="contact" data-page="contact">
+
+        <header>
+          <h2 class="h2 article-title">Contact</h2>
+        </header>
+
+      
+        <section class="contact-form">
+
+          <h3 class="h3 form-title">Contact Form</h3>
+
+          <form action="#" class="form" data-form>
+
+            <div class="input-wrapper">
+              <input type="text" name="fullname" class="form-input" placeholder="Full name" required data-form-input>
+
+              <input type="email" name="email" class="form-input" placeholder="Email address" required data-form-input>
+            </div>
+
+            <textarea name="message" class="form-input" placeholder="Your Message" required data-form-input></textarea>
+
+            <button class="form-btn" type="submit" disabled data-form-btn>
+              <ion-icon name="paper-plane"></ion-icon>
+              <span>Send Message</span>
+            </button>
+
+          </form>
+
+        </section>
+
+      </article>
+
+    </div>
+
+  </main>
+</div>
+
+
+
+
+
+  <!--
+    - custom js link
+  -->
+  <script src="./assets/js/script.js"></script>
+
+  <!--
+    - ionicon link
+  -->
+  <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+  <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+
+</body>
+
+</html>
